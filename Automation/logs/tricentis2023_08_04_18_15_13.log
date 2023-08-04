@@ -1,0 +1,10 @@
+[2023-08-04 18:15:13,821 - INFO - <browser_chrome>: ������� Chrome �������]
+[2023-08-04 18:15:14,904 - WARNING - <selenium_manager>: The chromedriver version (
+114.0.5735.90) detected in PATH at C:\Users\izrec\Desktop\Diplom_QA\Automation\chromedriver.exe might
+not be compatible with the detected chrome version (115.0.5790.171); currently, chromedriver 115.0.5790.170 i
+s recommended for chrome 115.*, so it is advised to delete the driver in PATH and retry]
+[2023-08-04 18:15:16,131 - INFO - <register_test>: ������ ������������: test_signUp]
+[2023-08-04 18:15:16,131 - INFO - <browser_chrome>: ������� �� ��������� URL: https://demowebshop.tricentis.com/register]
+[2023-08-04 18:15:17,743 - INFO - <_init_>: Start register]
+[2023-08-04 18:15:18,935 - INFO - <_init_>: Registration has just been finished]
+[2023-08-04 18:15:28,936 - INFO - <register_test>: ������������ test_signUp ���������]
