@@ -23,3 +23,7 @@ class Browser:
 
     def close_browser(self):
         return self.driver.quit()
+
+# class BrowserforRandom:
+#     def __init__(self):
+#         self.driver = webdriver.Chrome()
