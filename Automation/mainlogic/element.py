@@ -36,6 +36,10 @@ class ButtonElement(Element):
     def key_code(self):
         return self.element.click()
 
+class JustElement(Element):
+    def return_elem(self):
+        return self.element
+
 # class FindElement(Element):
 #     def element_code(self):
 #         return self.element
@@ -54,7 +58,7 @@ class Randomdata:
 class Random(): #выдаёт номера элементов в наличии из которых будет выбираться случайный для теста
     path = '/books'
     def __init__(self, Browser):
-        self.grid = InputElement(driver=Browser.get_driver(), locator=Locators.path_of_grid)
+        self.grid = JustElement(driver=Browser.get_driver(), locator=Locators.path_of_grid)
     def get_count_of_divs(self, Browser):
         self.count_of_divs = len(self.grid.find_elements(By.XPATH, "./div"))
         return self.count_of_divs

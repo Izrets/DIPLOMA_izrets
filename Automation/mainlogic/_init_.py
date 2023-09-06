@@ -63,8 +63,9 @@ class Business(): #ex SignUp
         # some pathsss
 
     def logic_run(self): #шаги проверки бизнес логики ex signup
+        time.sleep(5)
         LOGGER.info('Start buying')
-        R = Random(Browser)
+        R = Random(Browser())
         R = R.get_count_of_divs()
         R = R.get_in_stock_items()
         R = R.get_random_locator_of_actual_item()
