@@ -1,7 +1,8 @@
-from mainlogic._init_ import LogicRun, User, SignIn
-from browser_chrome import Browser
+from Automation.register._init_ import SignUp, User
+from Automation.browser_chrome import Browser
 import pytest
 import time
+
 import logging
 from pathlib import Path
 
@@ -21,6 +22,10 @@ def setup_logging(id_test):
     root_logger.setLevel(level="INFO")
 
 
+@pytest.fixture()
+def user_test():
+    return User(gender='m', first_name='Vasya', last_name="Ivanov", email="I1vanov123@ya.ru",
+                password='q1w2e3', confirm_password='q1w2e3')
 
 
 @pytest.fixture()
@@ -29,26 +34,13 @@ def browser():
     return Browser()
 
 
-
-@pytest.fixture()
-def user_data():
-    return User(email="I1vanov123@ya.ru", password='q1w2e3')
-
-
-class Testplaylogic:
-    def test_logic(self, browser, user_data):
-        LOGGER.info("Logging in")
-        browser.go_to_site(SignIn.path)
+class TestSignUpPage:
+    def test_signup(self, browser, user_test):
+        LOGGER.info("Запуск тестирования: test_signUp")
+        browser.go_to_site(SignUp.path)
         # browser.go_to_site(SignUp.path)
         browser.driver.implicitly_wait(10)
-        page = SignIn(browser)
-        page.signin(user_data)
-        browser.driver.implicitly_wait(10)
-        LOGGER.info("Logged in")
-
-        LOGGER.info("Start buying")
-        browser.go_to_site(LogicRun.path)
-        LOGGER.info('got the page')
-        page = LogicRun(browser)
-        page.logicrun(browser)
-
+        page = SignUp(browser)
+        page.signup(user_test)
+        time.sleep(10)
+        LOGGER.info("Тестирование test_signUp завершено")

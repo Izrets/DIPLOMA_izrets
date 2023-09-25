@@ -1,5 +1,5 @@
-from mainlogic._init_ import LogicRun, User, SignIn
-from browser_chrome import Browser
+from Automation.mainlogic._init_ import LogicRun, User, SignIn
+from Automation.browser_chrome import Browser
 import pytest
 import time
 import logging

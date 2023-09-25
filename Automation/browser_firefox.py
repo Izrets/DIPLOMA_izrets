@@ -4,8 +4,8 @@ import logging
 LOGGER = logging.getLogger(__name__)
 
 class Browser:
-    def __init__(self, base_url='https://cloud.scylladb.com'):
-        LOGGER.info("Браузер Chrome запущен")
+    def __init__(self, base_url='https://demowebshop.tricentis.com'):
+        LOGGER.info("Браузер FFox запущен")
         self.driver = webdriver.Firefox()
         self.base_url = base_url
 
